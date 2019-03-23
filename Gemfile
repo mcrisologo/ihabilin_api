@@ -8,17 +8,6 @@ ruby '2.6.0'
 gem 'rails', '5.2.2.1'
 gem 'puma', '~> 3.7'
 
-# authorizations and integrations
-gem 'devise'
-gem 'figaro'
-
-# database
-gem 'pg', '~> 0.18'
-
-# admin
-gem 'activeadmin'
-gem 'activeadmin_addons'
-
 # frontend
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'sass-rails', '~> 5.0'
@@ -28,6 +17,29 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.0.0'
 gem 'high_voltage'
 gem 'jquery-rails'
+
+# authorizations and integrations
+gem 'devise'
+gem 'figaro'
+
+# database
+gem 'pg', '~> 0.18'
+gem 'paper_trail'
+
+# admin
+gem 'activeadmin'
+gem 'activeadmin_addons'
+
+# api
+gem 'doorkeeper'
+gem 'kaminari'
+gem 'kaminari-grape'
+gem 'grape', '1.2.3'
+gem 'grape-entity', '0.7.1'
+gem 'grape-swagger', '0.32.1'
+gem 'grape-swagger-rails', '0.3.1'
+gem 'grape-kaminari', '0.1.9'
+gem 'rack-cors', require: 'rack/cors'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
