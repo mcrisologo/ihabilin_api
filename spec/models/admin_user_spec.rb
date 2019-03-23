@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: users
+# Table name: admin_users
 #
 #  id                     :integer          not null, primary key
 #  email                  :string           default(""), not null
@@ -10,12 +10,10 @@
 #  remember_created_at    :datetime
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  name                   :string
 #
 
-class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+require 'rails_helper'
+
+RSpec.describe AdminUser, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end

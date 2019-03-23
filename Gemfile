@@ -8,11 +8,16 @@ ruby '2.6.0'
 gem 'rails', '5.2.2.1'
 gem 'puma', '~> 3.7'
 
-# authorizations
+# authorizations and integrations
 gem 'devise'
+gem 'figaro'
 
 # database
 gem 'pg', '~> 0.18'
+
+# admin
+gem 'activeadmin'
+gem 'activeadmin_addons'
 
 # frontend
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -41,6 +46,7 @@ group :development do
 
   # code doctors
   gem 'rubocop'
+  gem 'annotate', '2.7.2'
 end
 
 group :development, :test do
