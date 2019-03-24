@@ -44,6 +44,9 @@ class Base < Grape::API
 
   # ---- MOUNT AREA ---- start
   mount Info
+
+  mount Users::API
+  mount UserMessages::API
   # ---- MOUNT AREA ---- end
 
   add_swagger_documentation api_version: 'v1', hide_documentation_path: true, hide_format: true,
