@@ -24,6 +24,7 @@ gem 'figaro'
 
 # database
 gem 'pg', '~> 0.18'
+gem 'attr_encrypted', '~> 3.1.0'
 gem 'paper_trail'
 
 # admin
