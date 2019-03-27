@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Doorkeeper.configure do
   # Change the ORM that doorkeeper will use (needs plugins)
   orm :active_record
@@ -9,10 +11,10 @@ Doorkeeper.configure do
 
   resource_owner_from_credentials do |_routes|
     user = User.find_for_database_authentication(email: params[:email])
-    if user && user.valid_for_authentication? { user.valid_password?(params[:password]) }
+    if user&.valid_for_authentication? { user.valid_password?(params[:password]) }
       user
     else
-      raise Doorkeeper::Errors::DoorkeeperError.new('Account is not present.')
+      raise Doorkeeper::Errors::DoorkeeperError, 'Account is not present.'
     end
   end
 

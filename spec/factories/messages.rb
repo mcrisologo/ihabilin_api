@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: messages
@@ -13,9 +15,9 @@
 
 FactoryBot.define do
   factory :message do
-    user { "" }
-    recipients { "" }
-    subject { "MyString" }
-    body { "MyText" }
+    user { '' }
+    recipients { '' }
+    subject { 'MyString' }
+    body { 'MyText' }
   end
 end

@@ -11,7 +11,7 @@ module ApiHelpers
         filename: file[:filename],
         type: file[:type],
         headers: file[:head],
-        tempfile: file[:tempfile],
+        tempfile: file[:tempfile]
       }
       record.file = ActionDispatch::Http::UploadedFile.new(attachment)
       record.save
@@ -28,7 +28,7 @@ module ApiHelpers
         filename: file[:filename],
         type: file[:type],
         headers: file[:head],
-        tempfile: file[:tempfile],
+        tempfile: file[:tempfile]
       }
       ActionDispatch::Http::UploadedFile.new(attachment).path
     end

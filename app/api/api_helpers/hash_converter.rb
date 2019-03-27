@@ -4,7 +4,7 @@ module ApiHelpers
   module HashConverter
     extend ::Grape::API::Helpers
 
-      def hash_to_param(hash)
+    def hash_to_param(hash)
       result = {}
       keys = hash.keys
       keys.delete('fake')
@@ -29,10 +29,10 @@ module ApiHelpers
         else
           data = hash[key.to_s]
         end
-        result.merge!(:"#{key.underscore}" => data) unless key.underscore.in?(%w(created_at updated_at))
+        result.merge!(:"#{key.underscore}" => data) unless key.underscore.in?(%w[created_at updated_at])
       end
       result
-    end
+  end
 
     def to_underscore(hash)
       convert hash, :underscore
@@ -44,16 +44,15 @@ module ApiHelpers
 
     def convert(obj, *method)
       case obj
-        when Hash
-          obj.inject({}) do |h, (k, v)|
-            v = convert v, *method
-            h[k.send(*method)] = v
-            h
-          end
-        when Array
-          obj.map { |m| convert m, *method }
-        else
-          obj
+      when Hash
+        obj.each_with_object({}) do |(k, v), h|
+          v = convert v, *method
+          h[k.send(*method)] = v
+        end
+      when Array
+        obj.map { |m| convert m, *method }
+      else
+        obj
       end
     end
   end
