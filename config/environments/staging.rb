@@ -90,6 +90,14 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
 
+  # exception notification config
+  Rails.application.config.middleware.use ExceptionNotification::Rack,
+                                          email: {
+                                            email_prefix: '[Ihabilin Staging] ',
+                                            sender_address: %("notifier" <michelle.crisologo@gmail.com>),
+                                            exception_recipients: %w( michelle.crisologo@gmail.com )
+                                          }
+
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 

@@ -77,3 +77,7 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
 end
+
+group :staging, :production do
+  gem 'exception_notification'
+end
