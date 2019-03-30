@@ -21,7 +21,7 @@ class Base < Grape::API
   helpers Doorkeeper::Grape::Helpers
   helpers ApiHelpers::Auths
   helpers ApiHelpers::HashConverter
-  helpers ApiHelpers::Messages
+  helpers ApiHelpers::StatusMessages
   helpers ApiHelpers::Logs
   helpers ApiHelpers::Files
   helpers ApiHelpers::Params
@@ -46,7 +46,7 @@ class Base < Grape::API
   mount Info
 
   mount Users::API
-  mount UserMessages::API
+  mount Messages::API
   # ---- MOUNT AREA ---- end
 
   add_swagger_documentation api_version: 'v1', hide_documentation_path: true, hide_format: true,

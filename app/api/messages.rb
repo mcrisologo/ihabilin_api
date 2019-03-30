@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module UserMessages
+module Messages
   class API < Grape::API
     resource :message, desc: 'Message Data' do
       desc 'Get messages'

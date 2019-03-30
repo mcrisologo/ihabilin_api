@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module ApiHelpers
-  module Messages
+  module StatusMessages
     extend ::Grape::API::Helpers
 
     def success!(message = '')
