@@ -17,7 +17,7 @@ module ApiHelpers
       if headers['Cookie'].include?('_bckets_auth')
         cookie = headers['Cookie'].split(';').find { |data| data.include?('_bckets_auth') }
         auth = Users::Authentication.find_by(oauth_token: cookie.split('=').last)
-        forbidden_request!('Auth does not exist') unless auth.present?
+        forbidden_request!('Auth does not exist') if auth.blank?
         user = auth.user
       end
 
@@ -38,7 +38,7 @@ module ApiHelpers
       # maybe setup a demo data
       @current_user ||= doorkeeper_user if doorkeeper_token
       @current_user ||= swaggered_user if swaggered!
-      forbidden_request!('User does not exist') unless @current_user.present?
+      forbidden_request!('User does not exist') if @current_user.blank?
 
       @current_user
     end

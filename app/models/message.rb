@@ -16,5 +16,5 @@
 class Message < ApplicationRecord
   belongs_to :user
 
-  validates_presence_of :recipients, :subject, :body
+  validates :recipients, :subject, :body, presence: true
 end

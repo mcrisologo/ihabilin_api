@@ -15,7 +15,7 @@ module ApiHelpers
     def set_paper_trail_meta
       if current_user
         PaperTrail.request.controller_info = {
-          whodunnit: current_user.id
+          whodunnit: current_user.id,
         }
       end
     end

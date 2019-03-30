@@ -32,7 +32,7 @@ module ApiHelpers
         result.merge!(:"#{key.underscore}" => data) unless key.underscore.in?(%w[created_at updated_at])
       end
       result
-  end
+    end
 
     def to_underscore(hash)
       convert hash, :underscore

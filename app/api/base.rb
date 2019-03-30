@@ -52,8 +52,8 @@ class Base < Grape::API
   add_swagger_documentation api_version: 'v1', hide_documentation_path: true, hide_format: true,
                             info: { title: 'Ihabilin API' }
 
-  def self.send_error_response(e)
-    case e
+  def self.send_error_response(error)
+    case error
     when ActiveRecord::RecordNotFound
       status = 404
       msg = 'Not Found'
@@ -64,7 +64,7 @@ class Base < Grape::API
       status = 500
       msg = 'Internal Server Error. Check your parameters.'
     end
-    msg << " -- EXCEPTION MSG: #{e.message}"
+    msg << " -- EXCEPTION MSG: #{error.message}"
     Rack::Response.new({ 'status' => status, 'message' => msg }.to_json, status)
   end
 end

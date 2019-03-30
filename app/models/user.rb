@@ -19,10 +19,10 @@ class User < ApplicationRecord
   include Grape::Entity::DSL
 
   entity :id, :email, :name,
-         :created_at, :updated_at
+    :created_at, :updated_at
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+    :recoverable, :rememberable, :validatable
 end

@@ -1,0 +1,104 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  TargetRailsVersion: 5.2
+  TargetRubyVersion: 2.6
+  Include:
+    - 'app/**/*'
+  Exclude:
+    - 'app/assets/**/*'
+    - 'app/views/**/*'
+    - 'bin/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'lib/**/*'
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
+    - 'spec/support/**/*'
+    - 'vendor/bundle/**/*'
+    - '**/Rakefile'
+    - '**/Gemfile'
+
+Rails:
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false
+
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/ClosingParenthesisIndentation:
+  Enabled: false
+
+Layout/FirstParameterIndentation:
+  Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/IndentArray:
+  EnforcedStyle: consistent
+
+Layout/IndentHash:
+  EnforcedStyle: consistent
+
+Style/SignalException:
+  EnforcedStyle: semantic
+
+Style/BracesAroundHashParameters:
+  EnforcedStyle: context_dependent
+
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 300
+
+Metrics/BlockLength:
+  Max: 100
+  Exclude:
+    - 'app/api/**/*'
+    - 'app/admin/**/*'
+
+Style/GuardClause:
+  Enabled: false
+
+Layout/EmptyLines:
+  Enabled: false
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArguments:
+  Enabled: false
+
+Style/DoubleNegation:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Style/IfInsideElse:
+  Enabled: false
+
+Style/Encoding:
+  Enabled: true
