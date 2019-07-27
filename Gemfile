@@ -8,10 +8,10 @@ end
 
 ruby '2.6.0'
 gem 'puma', '~> 3.7'
-gem 'rails', '5.2.2.1'
+gem 'rails', '5.2.3'
 
 # frontend
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap'
 gem 'coffee-rails', '~> 4.2'
 gem 'high_voltage'
 gem 'jbuilder', '~> 2.5'
