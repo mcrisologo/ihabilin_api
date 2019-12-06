@@ -7,7 +7,7 @@ git_source(:github) do |repo_name|
 end
 
 ruby '2.6.0'
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.12'
 gem 'rails', '5.2.3'
 
 # frontend
